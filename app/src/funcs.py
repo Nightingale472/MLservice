@@ -1,4 +1,5 @@
 import io
+import os
 from PIL import Image
 from ML.load import load_model
 
@@ -8,9 +9,12 @@ def load_ml():
     global model
     model = load_model()
 
+
 def save_image(image: bytes, file_name: str):
     img = Image.open(io.BytesIO(image))
-    path = f'C://Users/denis/Desktop/savedIMG/{file_name}'
+    if not os.path.exists("savedIMG"):
+        os.makedirs("savedIMG")
+    path = f'savedIMG/{file_name}'
     img.save(path)
     return path
 
