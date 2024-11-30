@@ -1,7 +1,7 @@
 from ultralytics import YOLO
 
 def load_model():
-    model = YOLO("C://Users/denis/PycharmProjects/pythonProject1/ML/best.pt")
+    model = YOLO("best.pt")
     model.eval()
     return model
 

@@ -13,7 +13,7 @@ def start():
 
 @app.get("/")
 async def main():
-    return {"Загрузите изображение автомобиля"}
+    return {"Загрузите изображение автомобиля используя /load-file"}
 
 @app.post("/load-file")
 async def upload_file(file: UploadFile, session: AsyncSession = Depends(get_async_session)):
